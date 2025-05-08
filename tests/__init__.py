@@ -17,7 +17,12 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import logging
 import os
 import sys
 
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+test_path = os.path.dirname(os.path.realpath(__file__))
+if test_path not in sys.path:
+    sys.path.append(test_path)
+
+logging.basicConfig(filename='.test.log', level=logging.DEBUG)

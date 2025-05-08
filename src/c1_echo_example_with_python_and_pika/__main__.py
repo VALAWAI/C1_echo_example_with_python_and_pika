@@ -1,6 +1,6 @@
 #
-# This file is part of the C2_treatment_nonmaleficence_valuator distribution
-# (https://github.com/VALAWAI/c2_treatment_nonmaleficence_valuator).
+# This file is part of the C1_echo_example_with_python_and_pika distribution
+# (https://github.com/VALAWAI/C1_echo_example_with_python_and_pika).
 # Copyright (c) 2022-2026 VALAWAI (https://valawai.eu/).
 #
 # This program is free software: you can redistribute it and/or modify
@@ -92,7 +92,7 @@ def configure_log():
         log_dir = os.getenv("LOG_DIR","logs")
         if not os.path.exists(log_dir):
             os.makedirs(log_dir)
-        log_file_name=os.path.join(log_dir,os.getenv("LOG_FILE_NAME","c2_treatment_nonmaleficence_valuator.txt"))
+        log_file_name=os.path.join(log_dir,os.getenv("LOG_FILE_NAME","c1_echo_example_with_python_and_pika.txt"))
 
         logging.config.dictConfig(
             {
