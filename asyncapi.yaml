@@ -1,0 +1,19 @@
+asyncapi: '2.6.0'
+info:
+ title: C1 Echo
+ version: '1.0.0'
+ description: |
+  This VALAWAI component echo the received messages.
+ license:
+  name: GNU General Public License version 3
+  url: https://opensource.org/license/gpl-3-0/
+ contact:
+  name: VALAWAI
+  url: https://valawai.eu/
+
+channels:
+
+components:
+  messages:
+
+  schemas:
