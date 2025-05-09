@@ -58,7 +58,7 @@ class MOVService:
 		return async_api
 		
 	def extract_default_component_name(self,asyncapi_yaml:str):
-		"""Obtain the default name of teh component from the AsyncAPI description"""
+		"""Obtain the default name of the component from the AsyncAPI description"""
 		
 		match = re.findall(r"valawai/(c[0|1|2]/\w+)/control/registered:", asyncapi_yaml)[0]
 		return match[0:2] + '_' + match[3:]
