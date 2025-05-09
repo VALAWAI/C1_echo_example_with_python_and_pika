@@ -25,7 +25,7 @@ from c1_echo_example_with_python_and_pika.message_service import MessageService
 
 
 class TestMessageService(unittest.TestCase):
-    """Class to test the service to interact with the rabbitMQ"""
+    """Class to test the service to interact with the RabbitMQ"""
 
     def setUp(self):
         """Create the message service."""

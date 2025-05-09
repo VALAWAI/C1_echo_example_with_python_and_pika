@@ -27,7 +27,7 @@ else
 		pushd MOV >/dev/null
 		if [ -z "$(docker images -q valawai/mov:latest 2> /dev/null)" ]; then
 
-			./buildDockerImages.sh latest
+			./buildDockerImages.sh -t latest
 			failIfNotSuccess $? "Cannot create the MOV image"
 
 		else
@@ -37,7 +37,7 @@ else
 			if [[ $SRC_DATE > $IMG_DATE ]]; then
 				# The image is older that the last modified file
 
-				./buildDockerImages.sh latest
+				./buildDockerImages.sh -t latest
 				failIfNotSuccess $? "Cannot create the MOV image"
 			fi
 		fi

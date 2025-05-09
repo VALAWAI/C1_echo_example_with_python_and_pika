@@ -1,7 +1,8 @@
 FROM python:3-slim
 
-ENV RABBITMQ_HOST=host.docker.internal
-	
+ENV RABBITMQ_HOST="host.docker.internal"
+ENV MOV_URL="http://localhost:8083"	
+
 WORKDIR /app
 COPY pyproject.toml .
 COPY LICENSE .
