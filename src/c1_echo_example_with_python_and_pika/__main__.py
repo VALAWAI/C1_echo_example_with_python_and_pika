@@ -42,18 +42,6 @@ class App:
         """
         self.stop()
 
-    def stop(self):
-        """Finalize the component."""
-
-        try:
-
-            self.mov.unregister_component()
-            self.message_service.close()
-            logging.info("Finished C1 Echo")
-
-        except (OSError, ValueError):
-
-            logging.exception("Could not stop the component")
 
     def start(self):
         """Initialize the component"""
@@ -64,6 +52,11 @@ class App:
             self.mov = MOV(self.message_service)
 
             # Create the handlers for the events
+            version = self.mov.load_default_project_version()
+            asyncapi_yaml = self.mov.load_default_asyncapi_yaml()
+            name = self.mov.extract_default_component_name(asyncapi_yaml)
+            self.mov.listen_for_registered_component(name)
+
             EchoHandler(self.message_service, self.mov)
 
             # Register the component
@@ -76,6 +69,19 @@ class App:
         except (OSError, ValueError):
 
             logging.exception("Could not start the component")
+
+    def stop(self):
+        """Finalize the component."""
+
+        try:
+
+            self.mov.unregister_component()
+            self.message_service.close()
+            logging.info("Finished C1 Echo")
+
+        except (OSError, ValueError):
+
+            logging.exception("Could not stop the component")
 
 
 
