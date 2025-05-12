@@ -18,12 +18,29 @@ channels:
       message:
         $ref: '#/components/messages/registered_component'
 
+  valawai/c1/echo_example_with_python_and_pika/data/received_message:
+    description: Receive the message to echo.
+    subscribe:
+      message:
+        $ref: '#/components/messages/echo_message'
+
+  valawai/c1/echo_example_with_python_and_pika/data/publish_message:
+    description: Publish the echoed message.
+    publish:
+      message:
+        $ref: '#/components/messages/echo_message'
+
 components:
   messages:
     registered_component:
       contentType: application/json
       payload:
         $ref: '#/components/schemas/component_payload'
+
+    ech_message:
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/echo_payload'
 
   schemas:
     component_payload:
@@ -248,4 +265,12 @@ components:
               type: array
               items:
                 - $ref: '#/components/schemas/payload_schema'
-    
+
+    echo_payload:
+      description: A payload of a message to echo.
+      type: object
+      properties:
+        content:
+          description: The content of the message.
+          type: string
+          minLength: 1
