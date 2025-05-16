@@ -1,7 +1,7 @@
 FROM python:3-slim
 
 ENV RABBITMQ_HOST="host.docker.internal"
-ENV MOV_URL="http://localhost:8083"	
+ENV MOV_URL="http://host.docker.internal:8083"	
 
 WORKDIR /app
 COPY pyproject.toml .
@@ -11,7 +11,7 @@ COPY src/ src/
 RUN pip install -e . && pip install hatch
 
 RUN echo "PS1='\[\033[01;32m\]c1_echo_example_with_python_and_pika@dev\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$ '" >> /root/.bashrc
-RUN echo "alias run=\"RABBITMQ_HOST=host.docker.internal python src/c1_echo_example_with_python_and_pika\"" >> /root/.bashrc
+RUN echo "alias run=\"python src/c1_echo_example_with_python_and_pika\"" >> /root/.bashrc
 RUN echo "alias testAll=\"hatch clean;hatch test\"" >> /root/.bashrc
 RUN echo "alias test=\"hatch clean;hatch test -vv \"" >> /root/.bashrc
 RUN echo "alias coverage=\"hatch clean;hatch test --cover\"" >> /root/.bashrc
