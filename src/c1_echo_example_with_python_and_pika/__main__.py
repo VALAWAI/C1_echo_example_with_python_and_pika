@@ -98,7 +98,7 @@ def configure_log():
         log_dir = os.getenv("LOG_DIR","logs")
         if not os.path.exists(log_dir):
             os.makedirs(log_dir)
-        log_file_name=os.path.join(log_dir,os.getenv("LOG_FILE_NAME","c1_echo_example_with_python_and_pika.txt"))
+        log_file_name=os.path.join(log_dir,os.getenv("LOG_FILE_NAME","log_messages.txt"))
 
         logging.config.dictConfig(
             {
