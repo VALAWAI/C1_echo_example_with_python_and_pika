@@ -57,7 +57,7 @@ else
 	fi
 	DOCKER_BUILDKIT=1 docker build $DOCKER_ARGS --pull -f docker/dev/Dockerfile -t valawai/c1_echo_example_with_python_and_pika:dev .
 	if [ $? -eq 0 ]; then
-		docker compose -f docker/dev/docker-compose.yaml up -d
+		docker compose -f docker/dev/docker-compose.yml up -d
 		failIfNotSuccess $? "Cannot start the required services"
 		
 		DOCKER_PARAMS="--rm --name c1_echo_example_with_python_and_pika_dev --add-host=host.docker.internal:host-gateway -v /var/run/docker.sock:/var/run/docker.sock -it"
