@@ -24,7 +24,7 @@ import os
 import signal
 
 from message_service import MessageService
-from mov import MOV
+from mov_service import MOVService
 from echo_handler import EchoHandler
 
 class App:
@@ -49,7 +49,7 @@ class App:
         try:
             # Create connection to RabbitMQ
             self.message_service = MessageService()
-            self.mov = MOV(self.message_service)
+            self.mov = MOVService(self.message_service)
 
             # Create the handlers for the events
             version = self.mov.load_default_project_version()
@@ -60,7 +60,7 @@ class App:
             EchoHandler(self.message_service, self.mov)
 
             # Register the component
-            self.mov.register_component()
+            self.mov.register_component(name,version,asyncapi_yaml)
 
             # Start to process the received events
             logging.info("Started C1 Echo")
