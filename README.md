@@ -7,8 +7,8 @@ and Pika. You can read more about in the [VALAWAI documentation](https://valawai
 
  - Type: C1
  - Name: Echo example with Python and Pika
- - Version: 1.0.0 (May 7, 2025)
- - API: [1.0.0 (May 7, 2025)](https://raw.githubusercontent.com/VALAWAI/C1_echo_example_with_python_and_pika/ASYNCAPI_1.0.0/asyncapi.yml)
+ - Version: 1.0.0 (May 19, 2025)
+ - API: [1.0.0 (May 19, 2025)](https://raw.githubusercontent.com/VALAWAI/C1_echo_example_with_python_and_pika/ASYNCAPI_1.0.0/asyncapi.yml)
  - VALAWAI API: [1.2.0 (March 9, 2024)](https://raw.githubusercontent.com/valawai/MOV/ASYNCAPI_1.2.0/asyncapi.yml)
  - Developed By: [IIIA-CSIC](https://www.iiia.csic.es)
  - License: [GPL 3](LICENSE)
@@ -119,7 +119,7 @@ configuration:
 
 ## Deploying the Component
 
-This section shows you how to get the C2 Treatment Nonmaleficence Valuator up 
+This section shows you how to get the C1 Echo example with python and pika up 
 and running using Docker Compose.
 
 ### What you'll need:
@@ -145,7 +145,7 @@ navigate to the directory where you downloaded the project, and run this command
     ```
 
     This command tells Docker Compose to start the application in the background (`-d`).
-     The `mov` part tells it to start the C2 component along with a related system called MOV.
+     The `mov` part tells it to start the C1 component along with a related system called MOV.
 
 3.  **Check if it's working:**
 
@@ -211,7 +211,7 @@ COMPOSE_PROFILES=mov docker-compose up -d
 ## Development
 
 This guide explains how to set up a development environment to work
-on the C2 Treatment Nonmaleficence Valuator code.
+on the C1 Echo example with python and pika code.
 
 ### Prerequisites:
 
@@ -236,7 +236,7 @@ on the C2 Treatment Nonmaleficence Valuator code.
 
 The development environment provides several commands for common actions:
 
-* **run:** Starts the C2 Treatment Nonmaleficence Valuator component.
+* **run:** Starts the C1 Echo example with python and pika component.
 * **testAll:** Runs all unit tests for the codebase.
 * **test test/test_something.py:** Runs the unit tests defined in
  the file `test_something.py`.
@@ -271,7 +271,7 @@ be changed for secure deployments in production environments.
 
 ## Links
 
- - [C2 Treatment nonmaleficence valuator documentation](https://valawai.github.io/docs/components/C2/treatment_nonmaleficence_valuator)
+ - [C1 Echo example with python and pika documentation](https://valawai.github.io/docs/components/C1/echo_example_with_python_and_pika)
  - [Master Of VALAWAI tutorial](https://valawai.github.io/docs/tutorials/mov)
  - [VALWAI documentation](https://valawai.github.io/docs/)
  - [VALAWAI project web site](https://valawai.eu/)
